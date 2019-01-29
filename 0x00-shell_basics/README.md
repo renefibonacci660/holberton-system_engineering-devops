@@ -1,0 +1,1 @@
+This section is to show us what shells functionality is and how to utilize its most basic functions
