@@ -1,2 +1,2 @@
 #!/bin/bash
-chown --find=guillame:hello betty
+chown --find=guillame:hello betty *
