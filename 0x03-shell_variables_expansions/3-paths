@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -l $PATH | wc -1
+echo $PATH | tr ":" "\n" | grep '[^[:blank:]]' | wc -l
