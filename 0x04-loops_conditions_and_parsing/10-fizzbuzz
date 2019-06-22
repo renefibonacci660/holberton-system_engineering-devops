@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#FizzBuzz in bash
+counter="1"
+while [ $counter -lt 101 ]; do
+a=$(($counter%15))
+b=$(($counter%5))
+c=$(($counter%3))
+if [ $a -eq 0 ]; then
+echo "FizzBuzz"
+elif [ $b -eq 0 ]; then
+echo "Buzz"
+elif [ $c -eq 0 ]; then
+echo "Fizz"
+else echo "$counter"
+fi
+counter=$[$counter+1]
+done
