@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# displays "infinity and beyond" in infinite loop in stdout
+while :; do
+	echo "To infinity and beyond"
+	sleep 2
+done
