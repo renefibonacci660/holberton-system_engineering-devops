@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Uses ssh to log into server using private key (why -i is needed)
+ssh -i ~/.ssh/holberton ubuntu@104.196.155.186
