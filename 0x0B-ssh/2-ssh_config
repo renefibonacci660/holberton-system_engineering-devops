@@ -1,0 +1,4 @@
+#SSH configuration in answer file using private key and refurst auth with Password
+Host ubuntu
+PasswordAuthentication no
+IdentityFile ~/.ssh/holberton
