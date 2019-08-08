@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Sets up an nginx web server that states text when curl command enacted
+sudo apt-get -y update
 sudo apt-get install -y nginx
-echo "Holberton School rocks!!" > /usr/share/nginx/html/index.html
-sudo service nginx restart
+echo "Holberton School" > /var/www/html/index.html
+sudo service reload nginx
