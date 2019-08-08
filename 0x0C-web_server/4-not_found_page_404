@@ -2,14 +2,9 @@
 # Adds 404 Error page
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo bash -c 'echo "Holberton School" > /var/www/html/index.nginx-debian.html'
-sudo bash -c 'sed -i "/server_name _;/ a\\\trewrite ^/redirect_me https:\/\/www.youtube.com/watch?v=gtdnMWMWN3o permanent;" /etc/nginx/sites-available/default'
-sudo service nginx start
-
-
-new="34.239.246.45;\n\tlocation \/redirect_me{\n\t\treturn 301 http:\/\/www.google.com;}"
-sed -i "s/localhost;/$new/" /etc/nginx/sites-available/default
-sed -i "s/#error_page 404/error_page 404/" /etc/nginx/sites-available/default
-touch /usr/share/nginx/html/404.html
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
+new="104.196.155.186;\n\tlocation \/redirect_me{\n\t\treturn 301 http:\/\/www.google.com;}"
+sudo sed -i "s/localhost;/$new/" /etc/nginx/sites-available/default
+sudo sed -i "s/#error_page 404/error_page 404/" /etc/nginx/sites-available/default
+sudo touch /usr/share/nginx/html/404.html
+sudo bash -c 'echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html'
 sudo service nginx restart
