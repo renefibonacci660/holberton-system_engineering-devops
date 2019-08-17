@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Setting up hostname in nginx headers
+sudo apt-get install nginx -y
+sed -i "15i\add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+sudo service nginx restart
+
+
+#!/usr/bin/env bash
+# installs nginx
+apt-get -y update
+apt-get -y install nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sed -i "/server_name _;/ a\\\trewrite ^/redirect_me https:\/\/www.youtube.com/watch?v=gtdnMWMWN3o permanent;" /etc/nginx/sites-available/default
+sed -i "/server_name _;/ a\\\tadd_header X-Served-By \"\$HOSTNAME\";" /etc/nginx/sites-available/default
+sed -i "/redirect_me/ a\\\terror_page 404 /custom_404.html;" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+service nginx start
