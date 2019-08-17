@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-# Setting up hostname in nginx headers
-sudo apt-get install nginx -y
-sed -i "15i\add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
-sudo service nginx restart
-
-
-#!/usr/bin/env bash
 # installs nginx
 apt-get -y update
 apt-get -y install nginx
