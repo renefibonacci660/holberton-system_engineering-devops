@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Installation and configuration of HAproxy load balancer with two servers with round roundrobin
+sudo apt-get update
+sudo apt-get install software-properties-common -y
+sudo apt-add-repository ppa:vbernat/haproxy-1.7 -y
+sudo apt-get update
+sudo apt-get install haproxy -y
+sudo apt-get install policycoreutils -y
+setsebool -P haproxy_connect_any=1
+sed -i '22 i\\nfrontend http-frontend\n\tbind \*:80\n\tmode http\n\tdefault_backend www-backend' /etc/haproxy/haproxy.cfg
+sed -i '27 i\\nbackend www-backend\n\tbalance roundrobin\n\tmode http\n\tserver 660-web-01 104.196.155.186 check\n\tserver 660-web-02 34.74.71.83 check' /etc/haproxy/haproxy.cfg
+sudo service haproxy restart 2>&1
