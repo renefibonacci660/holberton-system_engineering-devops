@@ -4,7 +4,7 @@ import requests
 import sys
 
 
-def complete_req():
+if __name__ == "__main__":
     """ Completes request with provided info """
     url = "https://jsonplaceholder.typicode.com"
     user_id = sys.argv[1]
@@ -19,6 +19,3 @@ def complete_req():
         completed), len(todo_dict)))
     for task in completed:
         print("\t {}".format(task))
-
-if __name__ == "__main__":
-    complete_req()
